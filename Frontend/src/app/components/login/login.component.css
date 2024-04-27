@@ -1,3 +1,11 @@
+/*:root{
+  #FFFFFF
+#232128
+#5E718C
+#8CA6A2
+#A4747F
+#A5AEAD
+}*/
 *{
     margin: 0;
     padding: 0;
@@ -9,13 +17,12 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: red;
   }
   .container{
     position: relative;
     width: 70vw;
     height: 80vh;
-    background: beige;
+    background: #F5F0E5;
     border-radius: 15px;
     box-shadow: 0 4px 0 rgb(0, 0, 0, 0.3),0 6px 0 rgb(0, 0, 0, 0.3);
    overflow: hidden;
@@ -27,7 +34,7 @@
     left:-50% ;
     width: 100%;
     height: 100%;
-    background:linear-gradient(-45deg, pink, #525252);
+    background:linear-gradient(-45deg, #232128, #525252);
     z-index: 6;
     transform: translateX(100%);
     transition: 1s ease-in-out;
@@ -50,6 +57,7 @@
      align-items: center;
      justify-content: center;
      flex-direction: column;
+     gap: 12px;
      width: 40%;
      min-width: 238px;
      padding: 0 10px;
@@ -66,15 +74,15 @@
   }
   .title{
     font-size: 35px;
-    color: aqua;
+    color: #1C170D;
     margin-bottom: 10px;
   }
   .input-field{
     width: 100%;
     height: 50px;
-    background:blueviolet;
+    background:rgba(250,250,250,0.6);
     margin: 10px 0;
-    border: 2px solid pink;
+    border: 2px solid rgba(0, 0, 0, 0.2);
     border-radius: 50px;
     display: flex;
     align-items: center;
@@ -99,10 +107,11 @@
     height: 50px;
     border: none;
     border-radius: 50px;
-    background: green;
+    background: #009963;
     color: blanchedalmond;
     font-weight: 600;
     margin: 10px 0;
+    margin-top: 20px;
     text-transform: uppercase;
     cursor: pointer;
   }
