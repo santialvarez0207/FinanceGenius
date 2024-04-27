@@ -1,5 +1,5 @@
 const express = require("express");
-const router_dealer = require("../components/dealer/network_dealer");
+const router_dealer = require("../components/User/");
 const router_car = require("../components/car/network_car");
 const router_customer = require("../components/consumer/network_consumer");
 const router_upload = require("../components/upload/network_upload");

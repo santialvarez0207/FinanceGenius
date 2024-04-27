@@ -1,4 +1,4 @@
-const Model = require('./model_customer');
+const Model = require('./model_user');
 
 
 async function getUser(parameter){
