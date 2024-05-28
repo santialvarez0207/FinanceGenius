@@ -49,3 +49,155 @@
     position: relative;
     z-index: 1;
 }
+
+/** Sección de los posts*/
+
+.postCommunity{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.followButton{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    overflow: hidden;
+    padding: 0 100px 0 0;
+    background-color: var(--b1);
+}
+
+ button{
+    background-color: #009963;
+    border-radius: 40px;
+    padding: 8px 16px;
+    color: #fafafa;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    height: 45px;
+    width: 180px;
+}
+
+.actionPost{
+    margin-top: 60px;
+    width: 80%;
+    background-color: var(--b0);
+    border: 5px var(--b1) solid;
+    border-radius: 25px;
+}
+.profilePost{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    
+}
+.profilePost p, .profilePost h2{
+    font-size: 15px;
+}
+.profilePost img{
+    margin-right: 15px;
+    width: clamp(40px, 4vw, 50px);
+}
+.buttonPost{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 0 25px 10px 0;
+}
+.posts{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.post{
+    margin-top: 20px;
+    width: 80%;
+    background-color: var(--b0);
+    border: 5px var(--b1) solid;
+    border-radius: 25px;
+}
+.post p:nth-child(1){
+    padding: 0 20px;
+}
+.likeZone{
+    display: flex;
+    padding: 0 20px;
+    justify-content: right;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.modalDiv{
+    background-color: #00000029;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: none;
+    position: fixed;
+    z-index: 1000000;
+    justify-content: center;
+    align-items: center;
+}
+textarea{
+    resize: none;
+    height: 200px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ff53642b;
+}
+input{
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ff53642b;
+    padding-left: 8px;
+}
+input:focus, textarea:focus{
+    border: none;
+    outline: none;
+    padding-left: 8px;
+}
+label{
+    margin: 15px 0;
+}
+.modal{
+    overflow: hidden;
+    background-color: var(--b0);
+    width: 50%;
+    height: 60%;
+    border-radius: 25px;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+.btnModal{
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: right;
+}
+
+.closeDiv{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}
+.material-icons{
+    cursor: pointer;
+}
+.likeZone p{
+    margin-right: -15px;
+}
