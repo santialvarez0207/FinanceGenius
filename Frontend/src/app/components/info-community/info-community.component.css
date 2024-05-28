@@ -185,7 +185,7 @@ label{
     overflow: hidden;
     background-color: var(--b0);
     width: 50%;
-    height: 60%;
+    max-height: 500px;
     border-radius: 25px;
     padding: 0 40px;
     display: flex;

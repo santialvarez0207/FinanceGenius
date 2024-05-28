@@ -8,6 +8,7 @@ import { HomeUserComponent } from './components/home-user/home-user.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { CommunitiesComponent } from './components/communities/communities.component';
 import { InfoCommunityComponent } from './components/info-community/info-community.component';
+import { PanelComponent } from './components/panel/panel.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
     {path: 'buscador', component: BuscadorComponent},
     {path: 'communities', component: CommunitiesComponent},
     {path: 'infoCommunity', component: InfoCommunityComponent},
+    {path: 'panel', component: PanelComponent}
   ]
   }
 

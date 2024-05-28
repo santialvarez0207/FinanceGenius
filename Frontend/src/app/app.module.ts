@@ -10,6 +10,7 @@ import { HomeUserComponent } from './components/home-user/home-user.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { CommunitiesComponent } from './components/communities/communities.component';
 import { InfoCommunityComponent } from './components/info-community/info-community.component';
+import { PanelComponent } from './components/panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { InfoCommunityComponent } from './components/info-community/info-communi
     HomeUserComponent,
     BuscadorComponent,
     CommunitiesComponent,
-    InfoCommunityComponent
+    InfoCommunityComponent,
+    PanelComponent
   ],
   imports: [
     BrowserModule,
