@@ -12,7 +12,7 @@ export class BuscadorComponent {
   ngOnInit(){
     
 
-    document.addEventListener("keyup", e=>{
+   /* document.addEventListener("keyup", e=>{
       
       if (e.target.matches("#buscador")){
   
@@ -28,7 +28,7 @@ export class BuscadorComponent {
       }
    
    
-    })
+    })*/
   }
   
 
