@@ -19,6 +19,18 @@ export class PerfilComponent {
     this.loadScript('assets/js/dashboard.js');*/
   }
 
+  modalClose(){
+    let modals = document.getElementById('modal');
+    modals!.style.display = 'none'
+  }
+
+  modalOpen(){
+    let modals = document.getElementById('modal');
+    modals!.style.display = 'flex'
+  }
+
+
+
   loadScript(src: string): void {
     const script = document.createElement('script');
     script.src = src;
