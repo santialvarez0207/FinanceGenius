@@ -1,0 +1,93 @@
+<div class="main-container" id="container">
+    <div class="overlay"></div>
+    <div class="search-overlay"></div>
+    <div class="rightbar-overlay"></div>
+    <!--  Sidebar Starts  -->
+    <div class="sidebar-wrapper sidebar-theme">
+        <nav id="sidebar">
+            <ul class="list-unstyled menu-categories" id="accordionExample">
+                
+                <li class="menu">
+                    <a href="datatables.html" aria-expanded="false" class="dropdown-toggle">
+                        <div class="">
+                            <i class="las la-home"></i>
+                            <span>Inicio</span>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="menu">
+                    <a href="datatables.html" aria-expanded="false" class="dropdown-toggle">
+                        <div class="">
+                            <i class="las la-user-alt"></i>
+                            <span>Perfil</span>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="menu">
+                    <a href="datatables.html" aria-expanded="false" class="dropdown-toggle">
+                        <div class="">
+                            <i class="las la-calculator"></i>
+                            <span>Panel de control</span>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="menu">
+                    <a href="datatables.html" aria-expanded="false" class="dropdown-toggle">
+                        <div class="">
+                            <i class="las la-users"></i>
+                            <span>Comunidades</span>
+                        </div>
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+        </nav>
+    </div>
+    <!--  Sidebar Ends  -->
+    <!--  Content Area Starts  -->
+    <div id="content" class="main-content">
+        <!--  Navbar Starts / Breadcrumb Area  -->
+        <div class="sub-header-container">
+            <header class="header navbar navbar-expand-sm">
+                <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom">
+                    <i class="las la-bars"></i>
+                </a>
+                <!-- <ul class="navbar-nav flex-row">
+                    <li>
+                        <div class="page-header">
+                            <nav class="breadcrumb-one" aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="javascript:void(0);">Basic Ui</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page"><span>Animation</span></li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </li>
+                </ul> -->
+            </header>
+        </div>
+        <!--  Navbar Ends / Breadcrumb Area  -->
+        <!-- Main Body Starts -->
+        <router-outlet/>
+        <!-- Main Body Ends -->
+        <div class="responsive-msg-component">
+            <p>
+                <a class="close-msg-component"><i class="las la-times"></i></a>
+                Please reload the page to view the responsive functionalities
+            </p>
+        </div>
+        <!-- Arrow Starts -->
+        <div class="scroll-top-arrow" style="display: none;">
+            <i class="las la-angle-up"></i>
+        </div>
+        <!-- Arrow Ends -->
+    </div>
+    <!--  Content Area Ends  -->
+    
+</div>
+<!-- Main Container Ends -->
