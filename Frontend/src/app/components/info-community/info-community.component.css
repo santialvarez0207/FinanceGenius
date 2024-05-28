@@ -24,22 +24,22 @@
     height: 0;
     border-left: clamp(130px, 13vw, 150px) solid transparent;
     border-right: clamp(130px, 13vw, 150px) solid transparent;
-    border-bottom: clamp(130px, 13vw, 150px) solid var(--c3); /* Color del triángulo */
+    border-bottom: clamp(130px, 13vw, 150px) solid var(--c3);
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -60%) rotate(132deg); /* Centrar y rotar el triángulo */
+    transform: translate(-50%, -60%) rotate(132deg); 
 }
 .triangleBottom {
     width: 0;
     height: 0;
     border-left: clamp(160px, 18vw, 180px) solid transparent;
     border-right: clamp(160px, 18vw, 180px) solid transparent;
-    border-bottom: clamp(160px, 18vw, 180px) solid var(--c2); /* Color del triángulo */
+    border-bottom: clamp(16 0px, 18vw, 180px) solid var(--c2);
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-63%, -80%) rotate(315deg); /* Centrar y rotar el triángulo */
+    transform: translate(-63%, -80%) rotate(315deg);
 }
 .Figures img{
     width: clamp(180px, 50%, 200px);
@@ -47,5 +47,5 @@
     aspect-ratio: 1/1;
     object-fit: cover;
     position: relative;
-    z-index: 1; /* Asegura que la imagen esté encima del triángulo */
+    z-index: 1;
 }

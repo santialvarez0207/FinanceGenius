@@ -85,7 +85,7 @@ input:focus{
     aspect-ratio: 1/1;
     object-fit: cover;
     position: relative;
-    z-index: 1; /* Asegura que la imagen esté encima del triángulo */
+    z-index: 1;
 }
 
 .boxCommunity h3{
@@ -109,20 +109,20 @@ input:focus{
     height: 0;
     border-left: 90px solid transparent;
     border-right: 90px solid transparent;
-    border-bottom: 90px solid var(--c3); /* Color del triángulo */
+    border-bottom: 90px solid var(--c3);
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -60%) rotate(132deg); /* Centrar y rotar el triángulo */
+    transform: translate(-50%, -60%) rotate(132deg); 
 }
 .triangleBottom {
     width: 0;
     height: 0;
     border-left: 100px solid transparent;
     border-right: 100px solid transparent;
-    border-bottom: 100px solid var(--c2); /* Color del triángulo */
+    border-bottom: 100px solid var(--c2); 
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-63%, -80%) rotate(315deg); /* Centrar y rotar el triángulo */
+    transform: translate(-63%, -80%) rotate(315deg); 
 }
