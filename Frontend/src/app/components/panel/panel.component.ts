@@ -12,10 +12,37 @@ export class PanelComponent {
   }
 
   ngOnInit() {
+    
     this.addLinkElement();
+    this.getDate();
     /*this.loadScript('assets/xato/plugins/apex/apexcharts.min.js');
     this.loadScript('assets/xato/plugins/flatpickr/flatpickr.js');
     this.loadScript('assets/js/dashboard.js');*/
+  }
+
+  getDate(){
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const dd = String(today.getDate()).padStart(2, '0');
+    const formattedDate = `${yyyy}-${mm}-${dd}`;
+    const dateInput = document.getElementById('date') as HTMLInputElement;
+
+    dateInput.value = formattedDate;
+  }
+  
+  modalClose(modalId:String): void{
+    let modals = document.querySelectorAll(`#${modalId}`) as NodeListOf<HTMLDivElement>;
+    modals.forEach(modalId => {
+      modalId!.classList.remove('visto');
+    });
+  }
+
+  modalOpen(modalId:String): void{
+    let modals = document.querySelectorAll(`#${modalId}`) as NodeListOf<HTMLDivElement>;
+    modals.forEach(modalId => {
+      modalId!.classList.add('visto');
+    });
   }
 
   loadScript(src: string): void {
