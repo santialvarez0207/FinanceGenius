@@ -1,0 +1,80 @@
+<style>
+    .material-symbols-outlined {
+        cursor: pointer;
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+</style>
+<div class="modalDiv" id="modal">
+    <div class="modal">
+        <div class="closeDiv">
+            <span (click)="modalClose()"  class="material-symbols-outlined">
+                close
+            </span>
+        </div>
+        <h2>Nueva publicación</h2>
+        <form>
+            <label>Titulo</label>
+            <input type="text">
+            <label>Contenido</label>
+            <textarea id=""></textarea>
+            <div class="btnModal">
+                <button>Publicar</button>
+            </div>
+        </form>
+    </div>
+</div>
+<section class="infoCommunity">
+    <div class="Figures">
+        <img src="./../../../assets/communities/defaultImage.jpg" alt="">
+        <div class="triangleTop"></div>
+        <div class="triangleBottom"></div>
+    </div>
+    <div class="nameCommunity">
+        <h1>the boys</h1>
+    </div>
+</section>
+<section class="postCommunity">
+    <div class="followButton">
+        <button>Seguir</button>
+    </div>
+    <div class="actionPost">
+        <div class="profilePost">
+            <div>
+                <img src="./../../../assets/foto_corta.png" alt="">
+            </div>
+            <div>
+                <h2>Me</h2>
+                <p>Lexu</p>
+            </div>
+        </div>
+        <div class="buttonPost">
+            <button (click)="modalOpen()">Nueva publicación</button>
+        </div>
+    </div>
+    <div class="posts">
+        <div class="post">
+            <div class="profilePost">
+                <div>
+                    <img src="./../../../assets/foto_corta.png" alt="">
+                </div>
+                <div>
+                    <h2>Me</h2>
+                    <p>Lexu</p>
+                </div>
+            </div>
+            <div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur sapiente deleniti numquam sit necessitatibus nulla est, atque quod ab in maiores odit nam enim! Incidunt eaque necessitatibus iusto atque officiis!</p>
+            </div>
+            <div class="likeZone">
+                <p>{{contador}}</p>
+                <span id="likeIcon" (click)="likeit()" class="material-symbols-outlined">
+                    favorite
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
