@@ -83,7 +83,7 @@
     background-color: var(--b1);
 }
 
- button{
+button{
     background-color: #009963;
     border-radius: 40px;
     padding: 8px 16px;
@@ -106,11 +106,12 @@
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 0 20px;
+    padding: 10px 20px;
     
 }
 .profilePost p, .profilePost h2{
     font-size: 15px;
+    margin-bottom: 0;
 }
 .profilePost img{
     margin-right: 15px;
@@ -132,6 +133,7 @@
 }
 .post{
     margin-top: 20px;
+    padding: 10px 0;
     width: 80%;
     background-color: var(--b0);
     border: 5px var(--b1) solid;
@@ -139,13 +141,14 @@
 }
 .post p:nth-child(1){
     padding: 0 20px;
+    margin: 10px 0;
 }
 .likeZone{
     display: flex;
     padding: 0 20px;
     justify-content: right;
     align-items: center;
-    margin-bottom: 10px;
+
 }
 .modalDiv{
     background-color: #00000029;
@@ -213,4 +216,5 @@ form{
 }
 .likeZone p{
     margin-right: -15px;
+    margin-bottom: 0;
 }

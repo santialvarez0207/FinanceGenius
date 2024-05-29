@@ -11,7 +11,8 @@ import { UserService } from '../../services/user.service';
 })
 export class LoginComponent {
 
-  constructor(private loginService: LoginService){ }
+  constructor(private loginService: LoginService, 
+    private userService: UserService){ }
 
   ngOnInit():void{
 
@@ -47,6 +48,27 @@ export class LoginComponent {
       window.alert('No se ha podido logear, usuario incorrecto');
     })
     this.formLogin.reset();
+  } 
+
+  formRegister = new FormGroup({
+    name: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required])
+  })
+
+  sendR(){
+    let name = this.formRegister.value.name || ""
+    let email = this.formRegister.value.email || "";
+    let password = this.formRegister.value.password || "";
+
+    const user = new User('',email,name,password,[],[])
+
+    this.userService.postUser(user).subscribe(res => {
+      window.alert('Usuario registrado con exito')
+    }, err => {
+      window.alert('Hubo un error al registrar el usuario')
+    })
+    this.formRegister.reset();
   } 
 
 }

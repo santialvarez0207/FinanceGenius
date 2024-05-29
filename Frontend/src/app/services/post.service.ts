@@ -19,6 +19,14 @@ export class PostService {
     return this.http.get<Post>(this.apiUrl + `/${id}`)
   }
 
+  getPostbyCommunity(id:string){
+    return this.http.get<Post[]>(this.apiUrl + `/getPostbyCommunity/${id}`)
+  }
+
+  getPostbyUser(id:string){
+    return this.http.get<Post[]>(this.apiUrl + `/getPostbyUser/${id}`)
+  }
+
   postPost(post: Post){
     return this.http.post<Post>(this.apiUrl, post)
   }
