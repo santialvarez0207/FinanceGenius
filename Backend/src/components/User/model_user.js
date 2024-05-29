@@ -1,27 +1,30 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const customerSchema = new Schema(
-  {
-    amount:String,
-    price:String,
-    amountfinance:String,
-    typeofresidence:String,
-    credit:String,
-    typeofcontract:String,
-    income:String,
-    zip:String,
-    address: String,
-    city: String,
-    cellphone: String,
+const postSchema = new Schema({
+    _id: String,
+    nameCreator: String,
+    _idCreator: String,
+    communityName: String,
+    content: String,
+    likes: Number
+});
+
+const communitySchema = new Schema({
+    _id: String,
+    name: String,
+    posts: [postSchema]
+});
+
+const userSchema = new Schema({
     email: String,
     name: String,
     password: String,
-  },
-  {
+    posts: [postSchema],
+    follows: [communitySchema]
+}, {
     versionKey: false,
-    timestamps: false,
-  }
-);
+    timestamps: false
+});
 
-module.exports = mongoose.model("Customer", customerSchema);
+module.exports = mongoose.model("User", userSchema);

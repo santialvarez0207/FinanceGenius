@@ -1,11 +1,11 @@
 const express = require('express');
 const response = require('../../network/response');
-const controller = require('./controller_user');
+const controller = require('./controller_post');
 const router = express.Router();
 
 router.put('/:id', (req, res) => {
     let id = req.params.id;
-    controller.updateUser(req.body, id)
+    controller.updatePost(req.body, id)
         .then((message) => {
             response.success(req, res, message, 201);
         })
@@ -14,31 +14,31 @@ router.put('/:id', (req, res) => {
         });
 });
 
-router.get('/check', (req, res) => {
-    controller.checkUser(req.query.email, req.query.password)
-        .then((session) => {
-            response.success(req, res, session, 201);
-        })
-        .catch((e) => {
-            response.error(req, res, "información incorrecta", e);
-        });
-});
-
 router.post('/', (req, res) => {
-    controller.addUser(req.body)
+    controller.addPost(req.body)
         .then((val) => {
             response.success(req, res, val, 201);
         })
         .catch((e) => {
-            response.error(req, res, "error al crear el usuario", e);
+            response.error(req, res, "error al crear el post", e);
         });
 });
 
 router.get('/:id', (req, res) => {
     let id = req.params.id;
-    controller.getUser(id)
-        .then((user) => {
-            response.success(req, res, user, 201);
+    controller.getPost(id)
+        .then((post) => {
+            response.success(req, res, post, 201);
+        })
+        .catch((e) => {
+            response.error(req, res, "no se obtuvieron los datos", e);
+        });
+});
+
+router.get('/', (req, res) => {
+    controller.getPosts()
+        .then((posts) => {
+            response.success(req, res, posts, 201);
         })
         .catch((e) => {
             response.error(req, res, "no se obtuvieron los datos", e);

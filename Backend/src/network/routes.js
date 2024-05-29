@@ -1,14 +1,14 @@
 const express = require("express");
-const router_dealer = require("../components/User/");
-const router_car = require("../components/car/network_car");
-const router_customer = require("../components/consumer/network_consumer");
-const router_upload = require("../components/upload/network_upload");
+const router_user = require("../components/User/network_user");
+const router_community = require("../components/Community/network_community");
+const router_post = require("../components/Post/network_post");
+
 
 const routes = function (server){
-    server.use('/api/dealer', router_dealer)
-    server.use('/api/car', router_car)
-    server.use('/api/customer', router_customer)
-    server.use('/api/image', router_upload)
+    server.use('/api/user', router_user)
+    server.use('/api/community', router_community)
+    server.use('/api/post', router_post)
+
 }
 
 
