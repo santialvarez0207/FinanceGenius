@@ -1,30 +1,27 @@
-const { findByIdAndDelete } = require('../User/model_user');
-const Model = require('./model_community')
+const Model = require('./model_community');
 
-async function getCommunity(parameter){
-    let community = await Model.findone(parameter);
+async function getCommunity(parameter) {
+    let community = await Model.findOne(parameter);
     return community;
 }
 
-async function addCommunity(community){
-    let Mcommunity = new Model(community)
-    await Mcommunity.save()
+async function addCommunity(community) {
+    let newCommunity = new Model(community);
+    await newCommunity.save();
 }
 
-
-async function getCommunities(parameter){
+async function getCommunities() {
     let communities = await Model.find();
     return communities;
 }
 
-async function deleteCommunity(parameter){
-    await Model.findByIdAndDelete(parameter);
-    return true
+async function updateCommunity(community, id) {
+    await Model.updateOne({ _id: id }, community);
 }
 
 module.exports = {
     getCommunity,
     addCommunity,
     getCommunities,
-    deleteCommunity,
-}
+    updateCommunity
+};
