@@ -15,7 +15,8 @@ async function addUser(body) {
             name: body.name,
             password: body.password,
             posts: body.posts || [],
-            follows: body.follows || []
+            follows: body.follows || [],
+            likes: body.likes || []
         };
         await store.addUser(user);
         return true;
@@ -31,7 +32,8 @@ async function updateUser(body, id) {
             name: body.name,
             password: body.password,
             posts: body.posts || [],
-            follows: body.follows || []
+            follows: body.follows || [],
+            likes: body.likes || []
         };
         await store.updateUser(user, id);
         return "se actualizó correctamente";

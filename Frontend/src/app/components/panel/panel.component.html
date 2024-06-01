@@ -8,14 +8,14 @@
         <h2>Nueva fila</h2>
         <form>
             <label>Nombre</label>
-            <input type="text">
+            <input id="ingreso_titulo" type="text">
             <label>Contenido</label>
-            <input id="date" type="date" readonly>
+            <input id="ingreso_fecha" type="date" >
             <label>Cantidad</label>
-            <input type="number">
+            <input id="ingreso_cantidad" type="number">
         </form>
         <div class="btnModal">
-            <button>Publicar</button>
+            <button (click)="ingreso()">Publicar</button>
         </div>
     </div>
 </div>
@@ -29,14 +29,14 @@
         <h2>Nueva fila</h2>
         <form>
             <label>Nombre</label>
-            <input type="text">
+            <input id="gasto_titulo" type="text">
             <label>Contenido</label>
-            <input type="date" readonly>
+            <input id="gasto_fecha" type="date" >
             <label>Cantidad</label>
-            <input type="number">
+            <input id="gasto_cantidad" type="number">
         </form>
         <div class="btnModal">
-            <button>Publicar</button>
+            <button (click)="gasto()">Publicar</button>
         </div>
     </div>
 </div>
@@ -71,19 +71,18 @@
                                         </div>
                                     </div>
                                     <div class="items">
-                                        <div class="item-content">
+                                        <div *ngFor="let gasto of ingresos;index as i;" class="item-content">
                                             <div class="user-location">
-                                                <p class="user-location">sueldo</p>
+                                                <p class="user-location">{{gasto.title}}</p>
                                             </div>
                                             <div class="user-email">
-                                                <p class="usr-email-addr">28/05/2024</p>
+                                                <p class="usr-email-addr">{{gasto.fecha}}</p>
                                             </div>
                                             <div class="user-location">
-                                                <p class="usr-location">2000000</p>
+                                                <p class="usr-location">{{gasto.cantidad}}</p>
                                             </div>
                                             <div class="action-btn">
-                                                <i class="lar la-edit text-primary font-20 mr-2 btn-edit-contact"></i>
-                                                <i class="lar la-trash-alt text-danger font-20 mr-2"></i>
+                                                <i (click)="eliminarPorId(gasto.id,'ingreso')" class="lar la-trash-alt text-danger font-20 mr-2"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -119,19 +118,18 @@
                                         </div>
                                     </div>
                                     <div class="items">
-                                        <div class="item-content">
+                                        <div *ngFor="let gasto of gastos;index as i;" class="item-content">
                                             <div class="user-location">
-                                                <p class="user-location">sueldo</p>
+                                                <p class="user-location">{{gasto.title}}</p>
                                             </div>
                                             <div class="user-email">
-                                                <p class="usr-email-addr">28/05/2024</p>
+                                                <p class="usr-email-addr">{{gasto.fecha}}</p>
                                             </div>
                                             <div class="user-location">
-                                                <p class="usr-location">2000000</p>
+                                                <p class="usr-location">{{gasto.cantidad}}</p>
                                             </div>
                                             <div class="action-btn">
-                                                <i class="lar la-edit text-primary font-20 mr-2 btn-edit-contact"></i>
-                                                <i class="lar la-trash-alt text-danger font-20 mr-2"></i>
+                                                <i (click)="eliminarPorId(gasto.id,'gasto')" class="lar la-trash-alt text-danger font-20 mr-2"></i>
                                             </div>
                                         </div>
                                     </div>

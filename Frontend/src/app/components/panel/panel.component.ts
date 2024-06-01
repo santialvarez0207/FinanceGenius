@@ -12,7 +12,7 @@ export class PanelComponent {
   }
 
   ngOnInit() {
-    
+    this.actualizar();
     this.addLinkElement();
     this.getDate();
     /*this.loadScript('assets/xato/plugins/apex/apexcharts.min.js');
@@ -58,6 +58,88 @@ export class PanelComponent {
     this.renderer.setAttribute(link, 'rel', 'stylesheet');
     this.renderer.setAttribute(link, 'href', 'assets/xato/assets/css/apps/contacts.css');
     this.renderer.appendChild(this.document.head, link);
-
   }
+
+  eliminarPorId(id:string,cual:string) {
+    const dataJSON = localStorage.getItem(cual);
+    if (!dataJSON) {
+        console.log('No hay datos en localStorage.');
+        return;
+    }
+    const data = JSON.parse(dataJSON);
+    const index = data.findIndex((item:any) => item.id === id);
+    if (index === -1) {
+        console.log(`No se encontró un objeto con el ID: ${id}`);
+        return;
+    }
+
+    data.splice(index, 1);
+    const updatedDataJSON = JSON.stringify(data);
+    localStorage.setItem(cual, updatedDataJSON);
+
+    console.log(`Objeto con ID: ${id} eliminado exitosamente.`);
+    this.actualizar()
+}
+
+ agregarElemento(nuevoElemento:any,cual:string) {
+  const dataJSON = localStorage.getItem(cual);
+  let data = [];
+
+  if (dataJSON) {
+      data = JSON.parse(dataJSON);
+  }
+
+  data.push(nuevoElemento);
+
+  const updatedDataJSON = JSON.stringify(data);
+  localStorage.setItem(cual, updatedDataJSON);
+
+  console.log('Nuevo elemento agregado exitosamente.');
+}
+
+gasto(){
+  let title=(<HTMLInputElement>document.getElementById("gasto_titulo")).value||""
+  let cant=(<HTMLInputElement>document.getElementById("gasto_cantidad")).value||""
+  let fecha=(<HTMLInputElement>document.getElementById("gasto_fecha")).value||""
+  const nuevoElemento = { id: this.getRandomInt(1, 1000000000000000),title:title, fecha: fecha, cantidad: cant };
+  this.agregarElemento(nuevoElemento,'gasto');
+  this.actualizar()
+}
+
+ingreso(){
+  let title=(<HTMLInputElement>document.getElementById("ingreso_titulo")).value||""
+  let cant=(<HTMLInputElement>document.getElementById("ingreso_cantidad")).value||""
+  let fecha=(<HTMLInputElement>document.getElementById("ingreso_fecha")).value||""
+  const nuevoElemento = { id: this.getRandomInt(1, 1000000000000000),title:title, fecha: fecha, cantidad: cant };
+  this.agregarElemento(nuevoElemento,'ingreso');
+  this.actualizar()
+
+}
+
+getRandomInt(min:number, max:number) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+gastos:any
+ingresos:any
+actualizar(){
+  const dataJSON = localStorage.getItem('gasto');
+  this.gastos = [];
+
+  if (dataJSON) {
+      this.gastos = JSON.parse(dataJSON);
+  }
+
+  const dataJSON2 = localStorage.getItem('ingreso');
+  this.ingresos = [];
+
+  if (dataJSON2) {
+      this.ingresos = JSON.parse(dataJSON2);
+  }
+
+}
+
+
 }

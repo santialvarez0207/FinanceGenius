@@ -7,7 +7,7 @@ async function getPost(parameter) {
 
 async function addPost(post) {
     let newPost = new Model(post);
-    await newPost.save();
+    return await newPost.save();
 }
 
 async function getPosts() {

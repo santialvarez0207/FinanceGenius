@@ -17,7 +17,7 @@ router.put('/:id', (req, res) => {
 router.post('/', (req, res) => {
     controller.addPost(req.body)
         .then((val) => {
-            response.success(req, res, val, 201);
+            res.status(200).send(val)
         })
         .catch((e) => {
             response.error(req, res, "error al crear el post", e);

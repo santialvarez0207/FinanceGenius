@@ -22,6 +22,9 @@ export class CommunityService {
   postCommunity(community: Community){
     return this.http.post<Community>(this.apiUrl, community)
   }
+  putCommunity(id:string,community: Community){
+    return this.http.put<Community>(this.apiUrl+ `/${id}`, community)
+  }
 
   deleteCommunity(id: string){
     return this.http.delete<Community>(this.apiUrl + `/${id}`)

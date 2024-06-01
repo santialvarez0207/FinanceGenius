@@ -7,7 +7,7 @@ router.put('/:id', (req, res) => {
     let id = req.params.id;
     controller.updateUser(req.body, id)
         .then((message) => {
-            response.success(req, res, message, 201);
+            response.success(req, res, message, 200);
         })
         .catch((e) => {
             response.error(req, res, "información incorrecta", e);

@@ -6,7 +6,8 @@ const postSchema = new Schema({
     _idCreator: String,
     communityName: String,
     content: String,
-    likes: Number
+    likes: Number,
+    title: String,
 }, {
     versionKey: false,
     timestamps: false

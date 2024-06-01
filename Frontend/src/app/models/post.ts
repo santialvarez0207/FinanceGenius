@@ -6,6 +6,7 @@ export class Post{
     _idCommunity: string;
     content: string;
     likes: number;
+    title: string;
 
     constructor(_id:string = "",
         nameCreator:string = "",
@@ -13,6 +14,7 @@ export class Post{
         communityName: string = "",
         _idCommunity: string = "",
         content:string = "", 
+        title:string = "", 
         likes:number = 0){
         
             this.communityName = communityName;
@@ -22,5 +24,6 @@ export class Post{
             this.nameCreator = nameCreator;
             this.content = content;
             this.likes = likes;
+            this.title = title;
     }
 }

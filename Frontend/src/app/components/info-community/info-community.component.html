@@ -18,11 +18,11 @@
         <h2>Nueva publicación</h2>
         <form>
             <label>Titulo</label>
-            <input type="text">
+            <input id="input_title" type="text">
             <label>Contenido</label>
-            <textarea id=""></textarea>
+            <textarea id="input_content" ></textarea>
             <div class="btnModal">
-                <button>Publicar</button>
+                <button (click)="publicar()">Publicar</button>
             </div>
         </form>
     </div>
@@ -34,12 +34,13 @@
         <div class="triangleBottom"></div>
     </div>
     <div class="nameCommunity">
-        <h1>the boys</h1>
+        <h1>{{data.name}}</h1>
     </div>
 </section>
 <section class="postCommunity">
     <div class="followButton">
-        <button>Seguir</button>
+        <button *ngIf="seguido" style="background-color: brown;" (click)="seguir()">Dejar de Seguir</button>
+        <button *ngIf="!seguido" (click)="seguir()">Seguir</button>
     </div>
     <div class="actionPost">
         <div class="profilePost">
@@ -48,7 +49,7 @@
             </div>
             <div>
                 <h2>Me</h2>
-                <p>Lexu</p>
+                <p>Quiero Opinar algo...</p>
             </div>
         </div>
         <div class="buttonPost">
@@ -56,25 +57,20 @@
         </div>
     </div>
     <div class="posts">
-        <div class="post">
+        <div *ngFor="let post of posts;index as i;" class="post">
             <div class="profilePost">
                 <div>
-                    <img src="./../../../assets/foto_corta.png" alt="">
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg" alt="" style="border-radius: 50%;">
                 </div>
                 <div>
-                    <h2>Me</h2>
-                    <p>Lexu</p>
+                    <h2>{{post.title}}</h2>
+                    <p>{{post.nameCreator}}</p>
                 </div>
             </div>
             <div>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur sapiente deleniti numquam sit necessitatibus nulla est, atque quod ab in maiores odit nam enim! Incidunt eaque necessitatibus iusto atque officiis!</p>
+                <p>{{post.content}}</p>
             </div>
-            <div class="likeZone">
-                <p>{{contador}}</p>
-                <span id="likeIcon" (click)="likeit()" class="material-symbols-outlined">
-                    favorite
-                </span>
-            </div>
+
         </div>
     </div>
 </section>

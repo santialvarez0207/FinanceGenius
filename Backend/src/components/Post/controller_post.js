@@ -11,10 +11,11 @@ async function addPost(body) {
             _idCreator: body._idCreator,
             communityName: body.communityName,
             content: body.content,
+            title: body.title,
             likes: body.likes || 0
         };
-        await store.addPost(post);
-        return true;
+        let data = await store.addPost(post);
+        return data;
     } catch (error) {
         throw error;
     }
@@ -27,6 +28,7 @@ async function updatePost(body, id) {
             _idCreator: body._idCreator,
             communityName: body.communityName,
             content: body.content,
+            title: body.title,
             likes: body.likes || 0
         };
         await store.updatePost(post, id);

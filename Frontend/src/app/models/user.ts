@@ -3,18 +3,20 @@ import { Community } from "./community";
 
 export class User{
     _id: string;
-    email: String;
-    name: String;
-    password: String;
-    posts:Array<Post>;
-    follows: Array<Community>
+    email: string;
+    name: string;
+    password: string;
+    posts:Array<string>;
+    follows: Array<string>
+    likes: Array<string>
 
     constructor(_id:string = "",
-        email: String = "",
-        name: String = "",
-        password: String = "",
-        posts:Array<Post> = [],
-        follows: Array<Community> = []){
+        email: string = "",
+        name: string = "",
+        password: string = "",
+        posts:Array<string> = [],
+        follows: Array<string> = [],
+        likes: Array<string> = []){
         
             this._id = _id;
             this.name = name;
@@ -22,5 +24,6 @@ export class User{
             this.password = password;
             this.posts = posts;
             this.follows = follows;
+            this.likes = likes;
     }
 }
