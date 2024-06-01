@@ -21,7 +21,7 @@ const routes: Routes = [
     {path: 'home-user', component: HomeUserComponent},
     {path: 'buscador', component: BuscadorComponent},
     {path: 'communities', component: CommunitiesComponent},
-    {path: 'infoCommunity', component: InfoCommunityComponent},
+    {path: 'infoCommunity/:id', component: InfoCommunityComponent},
     {path: 'panel', component: PanelComponent}
   ]
   }
